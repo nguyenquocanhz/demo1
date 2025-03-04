@@ -10,12 +10,14 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    RecyclerView recyclerView;
+    ComplexAdapter adapter;
+    List<Item> itemList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +28,22 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        RecyclerView recyclerView = findViewById(R.id.listItemView);
+//        RecyclerView recyclerView = findViewById(R.id.listItemView);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        List<String> dataList = Arrays.asList("Item 1", "Item 2", "Item 3", "Item 4");
+//        MyAdapter adapter = new MyAdapter(dataList);
+//        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.listItemView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+// Tạo dữ liệu mẫu
+        itemList = new ArrayList<>();
+        itemList.add(new Item(R.drawable.avt2, "Item 1","Kỹ thuật viên"));
 
-        List<String> dataList = Arrays.asList("Item 1", "Item 2", "Item 3", "Item 4");
-        MyAdapter adapter = new MyAdapter(dataList);
+// Thêm dữ liệu mẫu khác nếu cần...
+// Khởi tạo Adapter và thiết lập cho RecyclerView
+        adapter = new ComplexAdapter(itemList);
         recyclerView.setAdapter(adapter);
-    }
-    public void InitRecyclerView(){
-
 
     }
 //    public void StartRotation(int num,int vq){
