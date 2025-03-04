@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/white"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:background="@android:color/white">
+    android:padding="12dp">
 
     <LinearLayout
         android:id="@+id/linear1"
@@ -25,10 +25,10 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/circle_shape"
+            android:background="@drawable/ic_launcher_foreground"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground"
-            app:srcCompat="@drawable/avt1" />
+            android:src="@drawable/avt2"
+            app:srcCompat="@drawable/avt2" />
 
         <!-- Thông tin người dùng -->
         <LinearLayout
