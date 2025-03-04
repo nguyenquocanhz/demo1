@@ -1,6 +1,8 @@
 package com.example.demo01;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void StartRotation(){
-
+    public void StartRotation(int num,int vq){
+        ImageView imageView = findViewById(R.id.imageView);
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(imageView, "rotation", 0, vq);
+        rotation.setDuration(num); // Thời gian xoay là 1 giây
+        rotation.start();
     }
 }
